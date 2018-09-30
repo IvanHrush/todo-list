@@ -28,4 +28,20 @@ export class TodoListService {
 
     this.tasksUpdated.emit(this.tasks);
   }
+
+  filterTasks(state): Task[] {
+    let filteredTasks: Task[];
+    switch (state) {
+      case 'all':
+        filteredTasks = this.tasks;
+        break;
+      case 'active':
+        filteredTasks = this.tasks.filter(task => !task.completed);
+        break
+      case 'completed':
+        filteredTasks = this.tasks.filter(task => task.completed);
+        break
+    }
+    return filteredTasks;
+  }
 }

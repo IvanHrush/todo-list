@@ -4,11 +4,11 @@
     <button (click)="onTaskAdded(newTask.value);newTask.value=''">Add</button>
 </div>
 <div class="radio-buttons-field">
-    <input type="radio" id="stateAll" name="state" value="all">
+    <input type="radio" id="stateAll" name="state" value="all" (change)="onRadioBtnChange('all')">
     <label for="stateAll">all</label>
-    <input type="radio" id="stateActive" name="state" value="active">
+    <input type="radio" id="stateActive" name="state" value="active" (change)="onRadioBtnChange('active')">
     <label for="stateActive">active</label>
-    <input type="radio" id="stateCompleted" name="state" value="completed">
+    <input type="radio" id="stateCompleted" name="state" value="completed" (change)="onRadioBtnChange('completed')">
     <label for="stateCompleted">completed</label>
 </div>
 <div class="input-field">

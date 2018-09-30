@@ -31,4 +31,7 @@ export class TodoListComponent implements OnInit {
     this.todoListService.deleteTask(n);
   }
 
+  onRadioBtnChange(state) {
+    this.tasks = this.todoListService.filterTasks(state);
+  }
 }
