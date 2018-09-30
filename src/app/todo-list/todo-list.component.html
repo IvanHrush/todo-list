@@ -1,7 +1,7 @@
 <h1>ToDo List</h1>
 <div class="input-field">
-    <input type="text">
-    <button>Add</button>
+    <input type="text" #newTask (keydown.enter)="onTaskAdded(newTask.value);newTask.value=''">
+    <button (click)="onTaskAdded(newTask.value);newTask.value=''">Add</button>
 </div>
 <div class="radio-buttons-field">
     <input type="radio" id="stateAll" name="state" value="all">

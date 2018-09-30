@@ -19,7 +19,6 @@ export class TaskComponent implements OnInit {
 
   onCheck() {
     this.task.completed = !this.task.completed;
-    console.log(this.task.completed);
   }
 
   onDelete() {
