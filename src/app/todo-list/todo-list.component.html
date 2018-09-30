@@ -1,21 +1,21 @@
-<h1>ToDo List</h1>
+<h1 class="main-title">ToDo List</h1>
 <div class="input-field">
     <input type="text" #newTask (keydown.enter)="onTaskAdded(newTask.value);newTask.value=''">
-    <button (click)="onTaskAdded(newTask.value);newTask.value=''">Add</button>
+    <button class="btn-input btn-input-add" (click)="onTaskAdded(newTask.value);newTask.value=''"></button>
 </div>
 <div class="radio-buttons-field">
     <input type="radio" id="stateAll" name="state" value="all" (change)="onRadioBtnChange('all')">
-    <label for="stateAll">all</label>
+    <label for="stateAll" [class.selected]="filterOption === 'all'">all</label>
     <input type="radio" id="stateActive" name="state" value="active" (change)="onRadioBtnChange('active')">
-    <label for="stateActive">active</label>
+    <label for="stateActive" [class.selected]="filterOption === 'active'">active</label>
     <input type="radio" id="stateCompleted" name="state" value="completed" (change)="onRadioBtnChange('completed')">
-    <label for="stateCompleted">completed</label>
+    <label for="stateCompleted" [class.selected]="filterOption === 'completed'">completed</label>
 </div>
 <div class="input-field">
     <input type="text">
-    <button>Search</button>
+    <button class="btn-input btn-input-search"></button>
 </div>
-<div class="task-container">
+<div class="tasks-container">
     <task
       *ngFor="let task of tasks; let i = index"
       [task]="task"

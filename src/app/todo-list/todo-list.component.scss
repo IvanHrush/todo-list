@@ -3,3 +3,113 @@
 .completed {
   color: $error;
 }
+
+.main-title,
+.input-field,
+.radio-buttons-field {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type=text] {
+  width: 60%;
+  border: 1px solid $input-border;
+  padding-left: 10px;
+  font-size: 18px;
+
+  &:focus {
+    outline-color: $highlight;
+  }
+}
+
+.btn-input {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid $input-border;
+  border-left: none;
+  outline: none;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: $task-border;
+  }
+}
+
+.btn-input-add {
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background-color: $neutral;
+    top: 12px;
+    left: 18px;
+  }
+
+  &:after {
+    transform: rotate(90deg);
+  }
+}
+
+.btn-input-search {
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    background-color: $neutral;
+  }
+
+  &:before {
+    width: 12px;
+    height: 12px;
+    border: 2px solid $neutral;
+    background-color: transparent;
+    border-radius: 50%;
+    top: 9px;
+    left: 10px;
+  }
+  &:after {
+    top: 20px;
+    left: 25px;
+    width: 2px;
+    height: 12px;
+    transform: rotate(-45deg);
+  }
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.radio-buttons-field label{
+  padding: 2px 5px;
+  border: 1px solid $neutral;
+  border-right: none;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:last-child {
+    border-right: 1px solid $neutral;
+  }
+
+  &:hover {
+    background-color: $highlight;
+  }
+
+  &.selected {
+    background-color: $highlight;
+  }
+}

@@ -10,6 +10,7 @@ import { TodoListService } from './todo-list.service';
 })
 export class TodoListComponent implements OnInit {
 
+  filterOption:string = 'all';
   tasks: Task[];
 
   constructor(
@@ -32,6 +33,8 @@ export class TodoListComponent implements OnInit {
   }
 
   onRadioBtnChange(state) {
+    this.filterOption = state;
     this.tasks = this.todoListService.filterTasks(state);
+    console.log(this.filterOption);
   }
 }
