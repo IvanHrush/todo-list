@@ -1,0 +1,24 @@
+<h1>ToDo List</h1>
+<div class="input-field">
+    <input type="text">
+    <button>Add</button>
+</div>
+<div class="radio-buttons-field">
+    <input type="radio" id="stateAll" name="state" value="all">
+    <label for="stateAll">all</label>
+    <input type="radio" id="stateActive" name="state" value="active">
+    <label for="stateActive">active</label>
+    <input type="radio" id="stateCompleted" name="state" value="completed">
+    <label for="stateCompleted">completed</label>
+</div>
+<div class="input-field">
+    <input type="text">
+    <button>Search</button>
+</div>
+<div class="task-container">
+    <task
+      *ngFor="let task of tasks; let i = index"
+      [task]="task"
+      (taskDeleted)="onTaskDeleted(i)"
+      [class.completed]="task.completed"></task>
+</div>
