@@ -10,48 +10,17 @@ import { TodoListService } from './todo-list.service';
 })
 export class TodoListComponent implements OnInit {
 
-  filterOption: string = 'all';
-  tasks: Task[];
-
-  @ViewChild('search') search;
-
   constructor(
     private todoListService: TodoListService
   ) { }
 
   ngOnInit() {
-    this.tasks = this.todoListService.tasks;
-    this.todoListService.tasksUpdated.subscribe(() => {
-      this.filterTasks();
-    });
   }
 
   onTaskAdded(taskName) {
+    if (!taskName.trim()) {
+      return;
+    }
     this.todoListService.addTask(taskName);
-  }
-
-  onTaskDeleted(n) {
-    this.todoListService.deleteTask(n);
-  }
-
-  onRadioBtnChange(state) {
-    if (state === this.filterOption) return;
-    this.filterOption = state;
-    this.filterTasks();
-    this.search.nativeElement.value = '';
-  }
-
-  onSearchKeyUp() {
-    const searchStr = this.search.nativeElement.value;
-    const re = new RegExp(searchStr, 'i');
-
-    let tasksUpd: Task[] = this.todoListService.filterTasks(this.filterOption);
-    tasksUpd = tasksUpd.filter(task => re.test(task.name));
-    this.tasks = tasksUpd;
-
-  }
-
-  private filterTasks() {
-    this.tasks = this.todoListService.filterTasks(this.filterOption);
   }
 }
