@@ -17,12 +17,6 @@
   justify-content: center;
 }
 
-.tasks-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 input[type=text] {
   width: 60%;
   border: 1px solid $input-border;
@@ -89,32 +83,5 @@ input[type=text] {
     width: 2px;
     height: 12px;
     transform: rotate(-45deg);
-  }
-}
-
-input[type=radio] {
-  display: none;
-}
-
-.radio-buttons-field label{
-  color: $radio;
-  padding: 3px 10px;
-  border: 1px solid $radio;
-  border-right: none;
-  font-size: 14px;
-  cursor: pointer;
-
-  &:last-child {
-    border-right: 1px solid $radio;
-  }
-
-  &:hover {
-    background-color: $radio;
-    color: #fff;
-  }
-
-  &.selected {
-    background-color: $radio;
-    color: #fff;
   }
 }

@@ -1,0 +1,28 @@
+@import "../../shared/_colors";
+
+input[type=radio] {
+  display: none;
+}
+
+.radio-buttons-field label{
+  color: $radio;
+  padding: 3px 10px;
+  border: 1px solid $radio;
+  border-right: none;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:last-child {
+    border-right: 1px solid $radio;
+  }
+
+  &:hover {
+    background-color: $radio;
+    color: #fff;
+  }
+
+  &.selected {
+    background-color: $radio;
+    color: #fff;
+  }
+}

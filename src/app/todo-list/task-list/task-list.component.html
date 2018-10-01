@@ -1,0 +1,7 @@
+<div class="tasks-container">
+    <task
+      *ngFor="let task of tasks"
+      [task]="task"
+      (taskDeleted)="onTaskDeleted(task.id)"
+      [class.completed]="task.completed"></task>
+</div>

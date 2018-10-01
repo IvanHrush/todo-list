@@ -1,0 +1,8 @@
+<div class="radio-buttons-field">
+    <input type="radio" id="stateAll" name="state" value="all" (change)="onRadioBtnChange('all')">
+    <label for="stateAll" [class.selected]="filterOption === 'all'">all</label>
+    <input type="radio" id="stateActive" name="state" value="active" (change)="onRadioBtnChange('active')">
+    <label for="stateActive" [class.selected]="filterOption === 'active'">active</label>
+    <input type="radio" id="stateCompleted" name="state" value="completed" (change)="onRadioBtnChange('completed')">
+    <label for="stateCompleted" [class.selected]="filterOption === 'completed'">completed</label>
+</div>

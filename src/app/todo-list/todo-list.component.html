@@ -3,22 +3,6 @@
     <input type="text" #newTask (keydown.enter)="onTaskAdded(newTask.value);newTask.value=''">
     <button class="btn-input btn-input-add" (click)="onTaskAdded(newTask.value);newTask.value=''"></button>
 </div>
-<div class="radio-buttons-field">
-    <input type="radio" id="stateAll" name="state" value="all" (change)="onRadioBtnChange('all')">
-    <label for="stateAll" [class.selected]="filterOption === 'all'">all</label>
-    <input type="radio" id="stateActive" name="state" value="active" (change)="onRadioBtnChange('active')">
-    <label for="stateActive" [class.selected]="filterOption === 'active'">active</label>
-    <input type="radio" id="stateCompleted" name="state" value="completed" (change)="onRadioBtnChange('completed')">
-    <label for="stateCompleted" [class.selected]="filterOption === 'completed'">completed</label>
-</div>
-<div class="input-field">
-    <input type="text" #search (keyup)="onSearchKeyUp()">
-    <button class="btn-input btn-input-search" disabled></button>
-</div>
-<div class="tasks-container">
-    <task
-      *ngFor="let task of tasks; let i = index"
-      [task]="task"
-      (taskDeleted)="onTaskDeleted(i)"
-      [class.completed]="task.completed"></task>
-</div>
+<radio></radio>
+<search></search>
+<task-list></task-list>
