@@ -19,7 +19,7 @@
   color: $neutral;
 }
 
-.btn {
+.btn-task {
   width: 15px;
   height: 15px;
   background-color: transparent;
@@ -27,7 +27,7 @@
   outline: none;
 }
 
-.btn-check {
+.btn-task-check {
   position: relative;
   margin-right: 10px;
   border-radius: 50%;
@@ -52,17 +52,17 @@
     text-decoration: line-through;
   }
 
-  .btn-check {
+  .btn-task-check {
     border-color: $completed;
   }
 
-  .btn-check:after {
+  .btn-task-check:after {
     visibility: visible;
   }
 
 }
 
-.btn-delete {
+.btn-task-delete {
   position: absolute;
   top: 14px;
   right: 10px;

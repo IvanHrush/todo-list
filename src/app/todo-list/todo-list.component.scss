@@ -42,11 +42,6 @@ input[type=text] {
   border: 1px solid $input-border;
   border-left: none;
   outline: none;
-  transition: background-color .3s;
-
-  &:hover {
-    background-color: $task-border;
-  }
 }
 
 .btn-input-add {
@@ -58,10 +53,15 @@ input[type=text] {
     background-color: $neutral;
     top: 12px;
     left: 18px;
+    transition: background-color .3s;
   }
 
   &:after {
     transform: rotate(90deg);
+  }
+
+  &:hover {
+    background-color: $task-border;
   }
 }
 
@@ -95,21 +95,24 @@ input[type=radio] {
 }
 
 .radio-buttons-field label{
-  padding: 2px 5px;
-  border: 1px solid $neutral;
+  color: $radio;
+  padding: 3px 10px;
+  border: 1px solid $radio;
   border-right: none;
   font-size: 14px;
   cursor: pointer;
 
   &:last-child {
-    border-right: 1px solid $neutral;
+    border-right: 1px solid $radio;
   }
 
   &:hover {
-    background-color: $highlight;
+    background-color: $radio;
+    color: #fff;
   }
 
   &.selected {
-    background-color: $highlight;
+    background-color: $radio;
+    color: #fff;
   }
 }
