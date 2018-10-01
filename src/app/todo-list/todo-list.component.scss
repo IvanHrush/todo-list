@@ -66,6 +66,8 @@ input[type=text] {
 }
 
 .btn-input-search {
+  cursor: default;
+
   &:before, &:after {
     content: "";
     position: absolute;

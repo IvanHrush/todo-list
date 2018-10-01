@@ -11,7 +11,7 @@ export class TodoListService {
   tasks: Task[] = [
     new Task('laundry'),
     new Task('cleanup'),
-    new Task('homework')
+    new Task('todo-list')
   ];
 
   constructor() { }
