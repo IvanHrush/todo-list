@@ -10,7 +10,7 @@ import { TodoListService } from './todo-list.service';
 })
 export class TodoListComponent implements OnInit {
 
-  filterOption:string = 'all';
+  filterOption: string = 'all';
   tasks: Task[];
 
   constructor(
@@ -19,8 +19,8 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit() {
     this.tasks = this.todoListService.tasks;
-    this.todoListService.tasksUpdated.subscribe(tasks => {
-      this.tasks = tasks;
+    this.todoListService.tasksUpdated.subscribe(() => {
+      this.filterTasks();
     });
   }
 
@@ -34,7 +34,19 @@ export class TodoListComponent implements OnInit {
 
   onRadioBtnChange(state) {
     this.filterOption = state;
-    this.tasks = this.todoListService.filterTasks(state);
-    console.log(this.filterOption);
+    this.filterTasks();
+  }
+
+  onSearchKeyUp(str) {
+    const re = new RegExp(str, 'i');
+
+    let tasksUpd: Task[] = this.todoListService.filterTasks(this.filterOption);
+    tasksUpd = tasksUpd.filter(task => re.test(task.name));
+    this.tasks = tasksUpd;
+
+  }
+
+  private filterTasks() {
+    this.tasks = this.todoListService.filterTasks(this.filterOption);
   }
 }

@@ -12,12 +12,13 @@ export class TodoListService {
     new Task('laundry'),
     new Task('cleanup'),
     new Task('homework')
-  ]
+  ];
 
   constructor() { }
 
   addTask(taskName) {
     this.tasks.push(new Task(taskName));
+    this.tasksUpdated.emit(this.tasks);
   }
 
   deleteTask(n) {
@@ -37,10 +38,10 @@ export class TodoListService {
         break;
       case 'active':
         filteredTasks = this.tasks.filter(task => !task.completed);
-        break
+        break;
       case 'completed':
         filteredTasks = this.tasks.filter(task => task.completed);
-        break
+        break;
     }
     return filteredTasks;
   }
